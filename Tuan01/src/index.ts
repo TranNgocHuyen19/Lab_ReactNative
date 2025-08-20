@@ -468,6 +468,37 @@ userRepository.getAll().forEach(user => console.log(user.name));
 console.log("Products in repository:");
 productRepository.getAll().forEach(product => console.log(`${product.name} - ${product.price}`));
 // 22. Create a class Stack with push, pop, peek, isEmpty methods.
+class Stack<T> {
+    private items: T[] = [];
+
+    push(item: T): void {
+        this.items.push(item);
+        console.log(`Pushed item: ${item}`);
+    }
+
+    pop(): T | undefined {
+        const item = this.items.pop();
+        console.log(`Popped item: ${item}`);
+        return item;
+    }
+
+    peek(): T | undefined {
+        const item = this.items[this.items.length - 1];
+        console.log(`Peeked item: ${item}`);
+        return item;
+    }
+
+    isEmpty(): boolean {
+        return this.items.length === 0;
+    }
+}
+const stack = new Stack<number>();
+console.log("==================Cau 22==================")
+stack.push(1);
+stack.push(2);
+stack.push(3);
+console.log(`Peek: ${stack.peek()}`);
+stack.pop();
 // 23. Create an interface Payment with method pay(amount). Implement CashPayment and
 // CardPayment.
 // 24. Create an abstract class Appliance with method turnOn(). Implement Fan and AirConditioner.
