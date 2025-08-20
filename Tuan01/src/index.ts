@@ -329,8 +329,27 @@ console.log("==================Cau 15==================")
 library.addBook(new Book(" Head First JavaScript Programming_ A Brain-Friendly Guide-O’Reilly Media (2014)", "F. Scott Fitzgerald", 1925));
 library.addUser(new User("John Doe"));
 library.displayBooks();
-
 // 16. Create a generic class Box that can store any type of value.
+class Box<T> {
+    private value: T;
+
+    constructor(value: T) {
+        this.value = value;
+    }
+
+    getValue(): T {
+        return this.value;
+    }
+
+    setValue(value: T): void {
+        this.value = value;
+    }
+}
+const stringBox = new Box<string>("Hello, World!");
+const numberBox = new Box<number>(42);
+console.log("==================Cau 16==================")
+console.log(`String Box Value: ${stringBox.getValue()}`);
+console.log(`Number Box Value: ${numberBox.getValue()}`);
 // 17. Write a singleton Logger class that logs messages to console.
 // 18. Create a static class MathUtil with methods add(), subtract(), multiply(), divide().
 // 19. Demonstrate method overriding using polymorphism with Animal and subclasses.
