@@ -165,6 +165,33 @@ const dog = new Dog("Mực");
 console.log("==================Cau 9==================")
 console.log(`${dog.name} says: ${dog.sound()}`);
 // 10. Create a class Account with public, private and readonly fields.
+class Account {
+  public accountNumber: string;
+  private balance: number;
+  readonly accountType: string;
+
+  constructor(accountNumber: string, initialBalance: number, accountType: string) {
+    this.accountNumber = accountNumber;
+    this.balance = initialBalance;
+    this.accountType = accountType;
+  }
+
+  deposit(amount: number): void {
+    this.balance += amount;
+    console.log(`Deposited: ${amount}, New Balance: ${this.balance}`);
+  }
+
+  getBalance(): number {
+    return this.balance;
+  }
+}
+
+const account1 = new Account("123456789", 1000, "Savings");
+console.log("==================Cau 10==================")
+console.log(`Account Number: ${account1.accountNumber}`);
+console.log(`Account Type: ${account1.accountType}`);
+console.log(`Initial Balance: ${account1.getBalance()}`);
+
 // 11. Create a base class Animal. Extend Dog and Cat classes with methods bark() and meow().
 // 12. Define interfaces Flyable and Swimmable. Implement them in Bird and Fish classes.
 // 13. Create an abstract class Shape with method area(). Implement Square and Circle.
