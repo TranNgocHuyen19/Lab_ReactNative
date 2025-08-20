@@ -192,7 +192,31 @@ console.log(`Account Number: ${account1.accountNumber}`);
 console.log(`Account Type: ${account1.accountType}`);
 console.log(`Initial Balance: ${account1.getBalance()}`);
 
-// 11. Create a base class Animal. Extend Dog and Cat classes with methods bark() and meow().
+// 11. Create a base class Animal. Extend Dog and Cat classes 
+// with methods bark() and meow().
+class Animal2 {
+  constructor(public name: string) {}
+
+  makeSound(): string {
+    return "Some generic animal sound";
+  }
+}
+class Dog2 extends Animal2 {
+  bark(): string {
+    return `${this.name} says: Gâu!`;
+  }
+}
+class Cat extends Animal2 {
+  meow(): string {
+    return `${this.name} says: Meow!`;
+  }
+}
+const dogg = new Dog2("Buddy");
+const cat1 = new Cat("Whiskers");
+console.log("==================Cau 11==================")
+console.log(dogg.bark());
+console.log(cat1.meow());
+
 // 12. Define interfaces Flyable and Swimmable. Implement them in Bird and Fish classes.
 // 13. Create an abstract class Shape with method area(). Implement Square and Circle.
 // 14. Create a base class Employee. Extend Manager and Developer with specific methods.
