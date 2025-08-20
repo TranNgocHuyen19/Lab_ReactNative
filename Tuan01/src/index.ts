@@ -423,6 +423,28 @@ console.log(dog3.makeSound());
 console.log(cat2.makeSound());
 
 // 20. Write a Vehicle interface and implement it in Car and Bike classes.
+interface Vehicle {
+    start(): void;
+}
+class Car2 implements Vehicle {
+    constructor(public brand: string) { }
+
+    start(): void {
+        console.log(`${this.brand} car is starting.`);
+    }
+}
+class Bike implements Vehicle {
+    constructor(public brand: string) { }
+
+    start(): void {
+        console.log(`${this.brand} bike is starting.`);
+    }
+}
+const car2 = new Car2("Toyota");
+const bike = new Bike("Yamaha");
+console.log("==================Cau 20==================")
+car2.start();
+bike.start();
 // 21. Create a generic Repository class with methods add(), getAll().
 // 22. Create a class Stack with push, pop, peek, isEmpty methods.
 // 23. Create an interface Payment with method pay(amount). Implement CashPayment and
