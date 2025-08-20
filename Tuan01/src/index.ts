@@ -548,6 +548,24 @@ class Shape2 {
 console.log("==================Cau 25==================")
 console.log(Shape2.describe());
 // 26. Create a class Order with list of products. Add method to calculate total price.
+class Order {
+    private products: Product[] = [];
+    
+    addProduct(product: Product): void {
+        this.products.push(product);
+        console.log(`Added product: ${product.name}`);
+    }
+
+    calculateTotalPrice(): number {
+        return this.products.reduce((total, product) => total + product.price, 0);
+    }
+}
+const order = new Order();
+console.log("==================Cau 26==================")
+order.addProduct(new Product("Laptop", 15000000));
+order.addProduct(new Product("Phone", 8000000));
+console.log(`Total Price: ${order.calculateTotalPrice()}`);
+
 // 27. Create a class Teacher that extends Person. Add subject attribute and introduce method.
 
 // 28. Create a class Animal with protected method makeSound(). Extend Dog and Cat to override it.
