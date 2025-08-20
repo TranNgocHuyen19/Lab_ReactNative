@@ -148,7 +148,22 @@ console.log("Products with price > 100:");
 expensiveProducts.forEach(product => {
   console.log(`Name: ${product.name}, Price: ${product.price}`);
 });
+
 // 9. Define an interface Animal with name and method sound().
+interface Animal {
+    name: string;
+    sound(): string;
+    }
+class Dog implements Animal {
+  constructor(public name: string) {}
+  sound(): string {
+    return "Gau gauuuu!";
+  }
+}
+
+const dog = new Dog("Mực");
+console.log("==================Cau 9==================")
+console.log(`${dog.name} says: ${dog.sound()}`);
 // 10. Create a class Account with public, private and readonly fields.
 // 11. Create a base class Animal. Extend Dog and Cat classes with methods bark() and meow().
 // 12. Define interfaces Flyable and Swimmable. Implement them in Bird and Fish classes.
