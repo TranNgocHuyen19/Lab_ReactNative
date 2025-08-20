@@ -579,5 +579,27 @@ const teacher = new Teacher("Nguyễn Văn Thắng", 40, "Lập trình cho thi�
 console.log("==================Cau 27==================")
 teacher.introduce();
 // 28. Create a class Animal with protected method makeSound(). Extend Dog and Cat to override it.
+class Animal4 {
+    constructor(public name: string) { }
+    
+    protected makeSound(): string {
+        return `${this.name} makes a sound.`;
+    }
+}
+class Dog4 extends Animal4 {
+    makeSound(): string {
+        return `${this.name} says: Gâu!`;
+    }
+}
+class Cat3 extends Animal4 {
+    makeSound(): string {
+        return `${this.name} says: Meow!`;
+    }
+}
+const dog4 = new Dog4("Mực");
+const cat3 = new Cat3("Cam");
+console.log("==================Cau 28==================")
+console.log(dog4.makeSound());
+console.log(cat3.makeSound());
 // 29. Create an interface Movable with method move(). Implement it in Car and Robot.
 // 30. Create a class School with list of Students and Teachers. Add method to display info.
