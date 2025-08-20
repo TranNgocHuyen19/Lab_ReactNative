@@ -446,6 +446,27 @@ console.log("==================Cau 20==================")
 car2.start();
 bike.start();
 // 21. Create a generic Repository class with methods add(), getAll().
+class Repository<T> {
+    private items: T[] = [];
+
+    add(item: T): void {
+        this.items.push(item);
+        console.log(`Added item: ${JSON.stringify(item)}`);
+    }
+
+    getAll(): T[] {
+        return this.items;
+    }
+}
+const userRepository = new Repository<User>();
+userRepository.add(new User("Trần Ngọc Huyền"));
+const productRepository = new Repository<Product>();
+productRepository.add(new Product("Laptop", 15000000));
+console.log("==================Cau 21==================")
+console.log("Users in repository:");
+userRepository.getAll().forEach(user => console.log(user.name));
+console.log("Products in repository:");
+productRepository.getAll().forEach(product => console.log(`${product.name} - ${product.price}`));
 // 22. Create a class Stack with push, pop, peek, isEmpty methods.
 // 23. Create an interface Payment with method pay(amount). Implement CashPayment and
 // CardPayment.
