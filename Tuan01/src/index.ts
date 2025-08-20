@@ -540,6 +540,13 @@ console.log("==================Cau 24==================")
 fan.turnOn();
 airConditioner.turnOn();
 // 25. Create a class Shape with a static method describe().
+class Shape2 {
+    static describe(): string {
+        return "This is a shape.";
+    }
+}
+console.log("==================Cau 25==================")
+console.log(Shape2.describe());
 // 26. Create a class Order with list of products. Add method to calculate total price.
 // 27. Create a class Teacher that extends Person. Add subject attribute and introduce method.
 
