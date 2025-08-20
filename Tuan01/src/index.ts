@@ -132,6 +132,22 @@ user.name = "Trần Ngọc Huyền";
 console.log(`Updated User Name: ${user.name}`);
 // 8. Create a Product class with name, price. Create an array of products and filter products with
 // price > 100.
+class Product {
+  constructor(public name: string, public price: number) {}
+}
+const products: Product[] = [
+  new Product("Laptop", 1500),
+  new Product("Phone", 800),
+  new Product("Tablet", 300),
+  new Product("Charger", 50),
+  new Product("Headphones", 120)
+];
+const expensiveProducts = products.filter(product => product.price > 100);
+console.log("==================Cau 8==================")
+console.log("Products with price > 100:");
+expensiveProducts.forEach(product => {
+  console.log(`Name: ${product.name}, Price: ${product.price}`);
+});
 // 9. Define an interface Animal with name and method sound().
 // 10. Create a class Account with public, private and readonly fields.
 // 11. Create a base class Animal. Extend Dog and Cat classes with methods bark() and meow().
