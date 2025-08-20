@@ -624,3 +624,29 @@ car3.move();
 robot.move();
 
 // 30. Create a class School with list of Students and Teachers. Add method to display info.
+class School {
+    private students: Student[] = [];
+    private teachers: Teacher[] = [];
+
+    addStudent(student: Student): void {
+        this.students.push(student);
+        console.log(`Added student: ${student.name}`);
+    }
+
+    addTeacher(teacher: Teacher): void {
+        this.teachers.push(teacher);
+        console.log(`Added teacher: ${teacher.name}`);
+    }
+
+    displayInfo(): void {
+        console.log("Students:");
+        this.students.forEach(student => student.displayAllInfo());
+        console.log("Teachers:");
+        this.teachers.forEach(teacher => teacher.introduce());
+    }
+}
+const school = new School();
+console.log("==================Cau 30==================")
+school.addStudent(new Student("Trần Ngọc Huyền", 20, "DHKTPM18A"));
+school.addTeacher(new Teacher("Nguyễn Văn Thắng", 40, "DHKTPM18A"));
+school.displayInfo();
