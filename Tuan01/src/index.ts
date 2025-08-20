@@ -602,4 +602,25 @@ console.log("==================Cau 28==================")
 console.log(dog4.makeSound());
 console.log(cat3.makeSound());
 // 29. Create an interface Movable with method move(). Implement it in Car and Robot.
+interface Movable {
+    move(): void;
+}
+class Car3 implements Movable {
+    constructor(public brand: string) { }
+    move(): void {
+        console.log(`${this.brand} car is moving.`);
+    }
+}   
+class Robot implements Movable {
+    constructor(public name: string) { }
+    move(): void {
+        console.log(`${this.name} robot is moving.`);
+    }
+}
+const car3 = new Car3("Toyota");
+const robot = new Robot("Robo");
+console.log("==================Cau 29==================")
+car3.move();
+robot.move();
+
 // 30. Create a class School with list of Students and Teachers. Add method to display info.
