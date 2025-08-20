@@ -241,7 +241,34 @@ const fish = new Fish("Cá chép");
 console.log("==================Cau 12==================")
 console.log(bird.fly());
 console.log(fish.swim());
-// 13. Create an abstract class Shape with method area(). Implement Square and Circle.
+// 13. Create an abstract class Shape with method area(). 
+// Implement Square and Circle.
+abstract class Shape {
+  abstract area(): number;
+}
+class Square extends Shape {
+    constructor(private side: number) {
+        super();
+    }
+    
+    area(): number {
+        return this.side * this.side;
+    }
+    }
+class Circle extends Shape {
+  constructor(private radius: number) {
+    super();
+  }
+
+  area(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+const square = new Square(4);
+const circle = new Circle(3);
+console.log("==================Cau 13==================")
+console.log(`Square Area: ${square.area()}`);
+console.log(`Circle Area: ${circle.area().toFixed(2)}`);
 // 14. Create a base class Employee. Extend Manager and Developer with specific methods.
 // 15. Create a Library class that can store Book and User objects. Add method to add books.
 // 16. Create a generic class Box that can store any type of value.
