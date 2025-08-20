@@ -72,6 +72,31 @@ console.log(`Perimeter: ${rectangle.calculatePerimeter()}`);
 // 5. Create a class BankAccount with balance. 
 // Add methods deposit() and withdraw().
 
+class BankAccount {
+  private balance: number;
+
+  constructor(initialBalance: number) {
+    this.balance = initialBalance;
+  }
+
+  deposit(amount: number): void {
+    this.balance += amount;
+    console.log(`Deposited: ${amount}, New Balance: ${this.balance}`);
+  }
+
+  withdraw(amount: number): void {
+    if (amount > this.balance) {
+      console.log("Số dư tiền không đủ để rút.");
+    } else {
+      this.balance -= amount;
+      console.log(`Withdrew: ${amount}, New Balance: ${this.balance}`);
+    }
+  }
+}
+const account = new BankAccount(1000);
+console.log("==================Cau 5==================")
+account.deposit(500);
+account.withdraw(200);
 // 6. Create a class Book with attributes title, author, year.
 // 7. Write a class User with private property name and getter/setter.
 // 8. Create a Product class with name, price. Create an array of products and filter products with
