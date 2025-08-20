@@ -397,6 +397,31 @@ console.log(`Subtraction: ${MathUtil.subtract(5, 3)}`);
 console.log(`Multiplication: ${MathUtil.multiply(5, 3)}`);
 console.log(`Division: ${MathUtil.divide(5, 3).toFixed(2)}`);
 // 19. Demonstrate method overriding using polymorphism with Animal and subclasses.
+class Animal3 {
+    constructor(public name: string) { }
+
+    makeSound(): string {
+        return `${this.name} makes a sound.`;
+    }
+}
+class Dog3 extends Animal3 {
+    makeSound(): string {
+        return `${this.name} gauuuuu!`;
+    }
+}   
+class Cat2 extends Animal3 {
+    makeSound(): string {
+        return `${this.name} meoooo!`;
+    }
+}
+const animal = new Animal3("Generic Animal");
+const dog3 = new Dog3("Mực");
+const cat2 = new Cat2("Cam");
+console.log("==================Cau 19==================")
+console.log(animal.makeSound());
+console.log(dog3.makeSound());
+console.log(cat2.makeSound());
+
 // 20. Write a Vehicle interface and implement it in Car and Bike classes.
 // 21. Create a generic Repository class with methods add(), getAll().
 // 22. Create a class Stack with push, pop, peek, isEmpty methods.
