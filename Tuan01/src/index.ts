@@ -501,6 +501,25 @@ console.log(`Peek: ${stack.peek()}`);
 stack.pop();
 // 23. Create an interface Payment with method pay(amount). Implement CashPayment and
 // CardPayment.
+interface Payment {
+    pay(amount: number): void;
+}
+class CashPayment implements Payment {
+    pay(amount: number): void {
+        console.log(`Paid ${amount} in cash.`);
+    }
+}
+class CardPayment implements Payment {
+    pay(amount: number): void {
+        console.log(`Paid ${amount} using card.`);
+    }
+}
+const cashPayment = new CashPayment();
+const cardPayment = new CardPayment();
+console.log("==================Cau 23==================")
+cashPayment.pay(100);
+cardPayment.pay(200);
+
 // 24. Create an abstract class Appliance with method turnOn(). Implement Fan and AirConditioner.
 // 25. Create a class Shape with a static method describe().
 // 26. Create a class Order with list of products. Add method to calculate total price.
