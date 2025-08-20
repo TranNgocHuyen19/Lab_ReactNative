@@ -98,6 +98,17 @@ console.log("==================Cau 5==================")
 account.deposit(500);
 account.withdraw(200);
 // 6. Create a class Book with attributes title, author, year.
+class Book {
+  constructor(public title: string, public author: string, public year: number) {}
+
+  displayInfo(): void {
+    console.log(`Title: ${this.title}, Author: ${this.author}, Year: ${this.year}`);
+  }
+}
+const book = new Book("Head First JavaScript Programming_ A Brain-Friendly Guide-O’Reilly Media", "Eric T. Freeman, Elisabeth Robson ", 2014);
+console.log("==================Cau 6==================")
+book.displayInfo();
+
 // 7. Write a class User with private property name and getter/setter.
 // 8. Create a Product class with name, price. Create an array of products and filter products with
 // price > 100.
