@@ -218,6 +218,29 @@ console.log(dogg.bark());
 console.log(cat1.meow());
 
 // 12. Define interfaces Flyable and Swimmable. Implement them in Bird and Fish classes.
+interface Flyable {
+  fly(): string;
+}
+interface Swimmable {
+  swim(): string;
+}
+class Bird implements Flyable {
+  constructor(public name: string) {}
+  fly(): string {
+    return `${this.name} is flying!`;
+  }
+}
+class Fish implements Swimmable {
+  constructor(public name: string) {}
+  swim(): string {      
+    return `${this.name} is swimming!`;
+  }
+}
+const bird = new Bird("Chim bồ câu");
+const fish = new Fish("Cá chép");
+console.log("==================Cau 12==================")
+console.log(bird.fly());
+console.log(fish.swim());
 // 13. Create an abstract class Shape with method area(). Implement Square and Circle.
 // 14. Create a base class Employee. Extend Manager and Developer with specific methods.
 // 15. Create a Library class that can store Book and User objects. Add method to add books.
