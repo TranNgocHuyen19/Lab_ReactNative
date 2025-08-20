@@ -269,7 +269,41 @@ const circle = new Circle(3);
 console.log("==================Cau 13==================")
 console.log(`Square Area: ${square.area()}`);
 console.log(`Circle Area: ${circle.area().toFixed(2)}`);
-// 14. Create a base class Employee. Extend Manager and Developer with specific methods.
+// 14. Create a base class Employee. Extend Manager and Developer
+//  with specific methods.
+class Employee {
+  constructor(public name: string, public position: string) {}
+
+  displayInfo(): void {
+    console.log(`Name: ${this.name}, Position: ${this.position}`);
+  }
+}
+
+class Manager extends Employee {
+  constructor(name: string) {
+    super(name, "Manager");
+  }
+
+  manage(): void {
+    console.log(`${this.name} is managing the team.`);
+  }
+}
+class Developer extends Employee {
+  constructor(name: string) {
+    super(name, "Developer");
+  }
+
+  code(): void {
+    console.log(`${this.name} is writing code.`);
+  }
+}
+const manager = new Manager("Nguyen Van A");
+const developer = new Developer("Nguyen Van B");    
+console.log("==================Cau 14==================")
+manager.displayInfo();
+developer.displayInfo();
+manager.manage();
+developer.code();
 // 15. Create a Library class that can store Book and User objects. Add method to add books.
 // 16. Create a generic class Box that can store any type of value.
 // 17. Write a singleton Logger class that logs messages to console.
