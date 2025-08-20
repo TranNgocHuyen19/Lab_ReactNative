@@ -1,5 +1,5 @@
 function hello(name: string): string {
-  return `Hello, ${name}!`;
+    return `Hello, ${name}!`;
 }
 
 console.log(hello("200Lab"));
@@ -7,11 +7,11 @@ console.log(hello("200Lab"));
 //1. Create a class Person with attributes name and age. 
 // Write a method to display this information.
 class Person {
-  constructor(public name: string, public age: number) {}
+    constructor(public name: string, public age: number) { }
 
-  displayInfo(): void {
-    console.log(`Name: ${this.name}, Age: ${this.age}`);
-  }
+    displayInfo(): void {
+        console.log(`Name: ${this.name}, Age: ${this.age}`);
+    }
 }
 
 const person = new Person("Tran Ngoc Huyen", 20);
@@ -22,14 +22,14 @@ person.displayInfo();
 // additional attribute grade. Add a method to
 // display all info.
 class Student extends Person {
-  constructor(name: string, age: number, public grade: string) {
-    super(name, age);
-  }
+    constructor(name: string, age: number, public grade: string) {
+        super(name, age);
+    }
 
-  displayAllInfo(): void {
-    this.displayInfo();
-    console.log(`Grade: ${this.grade}`);
-  }
+    displayAllInfo(): void {
+        this.displayInfo();
+        console.log(`Grade: ${this.grade}`);
+    }
 }
 
 const student = new Student("Tran Ngoc Huyen", 20, "DHKTPM18A");
@@ -39,11 +39,11 @@ student.displayAllInfo();
 // 3. Create a class Car with properties brand, model, year. 
 // Write a method to show car info.
 class Car {
-  constructor(public brand: string, public model: string, public year: number) {}
+    constructor(public brand: string, public model: string, public year: number) { }
 
-  showCarInfo(): void {
-    console.log(`Brand: ${this.brand}, Model: ${this.model}, Year: ${this.year}`);
-  }
+    showCarInfo(): void {
+        console.log(`Brand: ${this.brand}, Model: ${this.model}, Year: ${this.year}`);
+    }
 }
 
 const car = new Car("Vinfast", "VF3", 2025)
@@ -53,15 +53,15 @@ car.showCarInfo();
 // 4. Create a class Rectangle with width and height. 
 // Write a method to calculate area and perimeter.
 class Rectangle {
-  constructor(public width: number, public height: number) {}
+    constructor(public width: number, public height: number) { }
 
-  calculateArea(): number {
-    return this.width * this.height;
-  }
+    calculateArea(): number {
+        return this.width * this.height;
+    }
 
-  calculatePerimeter(): number {
-    return 2 * (this.width + this.height);
-  }
+    calculatePerimeter(): number {
+        return 2 * (this.width + this.height);
+    }
 }
 
 const rectangle = new Rectangle(5, 10);
@@ -73,25 +73,25 @@ console.log(`Perimeter: ${rectangle.calculatePerimeter()}`);
 // Add methods deposit() and withdraw().
 
 class BankAccount {
-  private balance: number;
+    private balance: number;
 
-  constructor(initialBalance: number) {
-    this.balance = initialBalance;
-  }
-
-  deposit(amount: number): void {
-    this.balance += amount;
-    console.log(`Deposited: ${amount}, New Balance: ${this.balance}`);
-  }
-
-  withdraw(amount: number): void {
-    if (amount > this.balance) {
-      console.log("Số dư tiền không đủ để rút.");
-    } else {
-      this.balance -= amount;
-      console.log(`Withdrew: ${amount}, New Balance: ${this.balance}`);
+    constructor(initialBalance: number) {
+        this.balance = initialBalance;
     }
-  }
+
+    deposit(amount: number): void {
+        this.balance += amount;
+        console.log(`Deposited: ${amount}, New Balance: ${this.balance}`);
+    }
+
+    withdraw(amount: number): void {
+        if (amount > this.balance) {
+            console.log("Số dư tiền không đủ để rút.");
+        } else {
+            this.balance -= amount;
+            console.log(`Withdrew: ${amount}, New Balance: ${this.balance}`);
+        }
+    }
 }
 const account = new BankAccount(1000);
 console.log("==================Cau 5==================")
@@ -99,11 +99,11 @@ account.deposit(500);
 account.withdraw(200);
 // 6. Create a class Book with attributes title, author, year.
 class Book {
-  constructor(public title: string, public author: string, public year: number) {}
+    constructor(public title: string, public author: string, public year: number) { }
 
-  displayInfo(): void {
-    console.log(`Title: ${this.title}, Author: ${this.author}, Year: ${this.year}`);
-  }
+    displayInfo(): void {
+        console.log(`Title: ${this.title}, Author: ${this.author}, Year: ${this.year}`);
+    }
 }
 const book = new Book("Head First JavaScript Programming_ A Brain-Friendly Guide-O’Reilly Media", "Eric T. Freeman, Elisabeth Robson ", 2014);
 console.log("==================Cau 6==================")
@@ -111,19 +111,19 @@ book.displayInfo();
 
 // 7. Write a class User with private property name and getter/setter.
 class User {
-  private _name: string;
+    private _name: string;
 
-  constructor(name: string) {
-    this._name = name;
-  }
+    constructor(name: string) {
+        this._name = name;
+    }
 
-  get name(): string {
-    return this._name;
-  }
+    get name(): string {
+        return this._name;
+    }
 
-  set name(newName: string) {
-    this._name = newName;
-  }
+    set name(newName: string) {
+        this._name = newName;
+    }
 }
 const user = new User("Trần Ngọc Huyền IUH");
 console.log("==================Cau 7==================")
@@ -133,32 +133,32 @@ console.log(`Updated User Name: ${user.name}`);
 // 8. Create a Product class with name, price. Create an array of products and filter products with
 // price > 100.
 class Product {
-  constructor(public name: string, public price: number) {}
+    constructor(public name: string, public price: number) { }
 }
 const products: Product[] = [
-  new Product("Laptop", 1500),
-  new Product("Phone", 800),
-  new Product("Tablet", 300),
-  new Product("Charger", 50),
-  new Product("Headphones", 120)
+    new Product("Laptop", 1500),
+    new Product("Phone", 800),
+    new Product("Tablet", 300),
+    new Product("Charger", 50),
+    new Product("Headphones", 120)
 ];
 const expensiveProducts = products.filter(product => product.price > 100);
 console.log("==================Cau 8==================")
 console.log("Products with price > 100:");
 expensiveProducts.forEach(product => {
-  console.log(`Name: ${product.name}, Price: ${product.price}`);
+    console.log(`Name: ${product.name}, Price: ${product.price}`);
 });
 
 // 9. Define an interface Animal with name and method sound().
 interface Animal {
     name: string;
     sound(): string;
-    }
+}
 class Dog implements Animal {
-  constructor(public name: string) {}
-  sound(): string {
-    return "Gau gauuuu!";
-  }
+    constructor(public name: string) { }
+    sound(): string {
+        return "Gau gauuuu!";
+    }
 }
 
 const dog = new Dog("Mực");
@@ -166,24 +166,24 @@ console.log("==================Cau 9==================")
 console.log(`${dog.name} says: ${dog.sound()}`);
 // 10. Create a class Account with public, private and readonly fields.
 class Account {
-  public accountNumber: string;
-  private balance: number;
-  readonly accountType: string;
+    public accountNumber: string;
+    private balance: number;
+    readonly accountType: string;
 
-  constructor(accountNumber: string, initialBalance: number, accountType: string) {
-    this.accountNumber = accountNumber;
-    this.balance = initialBalance;
-    this.accountType = accountType;
-  }
+    constructor(accountNumber: string, initialBalance: number, accountType: string) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+        this.accountType = accountType;
+    }
 
-  deposit(amount: number): void {
-    this.balance += amount;
-    console.log(`Deposited: ${amount}, New Balance: ${this.balance}`);
-  }
+    deposit(amount: number): void {
+        this.balance += amount;
+        console.log(`Deposited: ${amount}, New Balance: ${this.balance}`);
+    }
 
-  getBalance(): number {
-    return this.balance;
-  }
+    getBalance(): number {
+        return this.balance;
+    }
 }
 
 const account1 = new Account("123456789", 1000, "Savings");
@@ -195,21 +195,21 @@ console.log(`Initial Balance: ${account1.getBalance()}`);
 // 11. Create a base class Animal. Extend Dog and Cat classes 
 // with methods bark() and meow().
 class Animal2 {
-  constructor(public name: string) {}
+    constructor(public name: string) { }
 
-  makeSound(): string {
-    return "Some generic animal sound";
-  }
+    makeSound(): string {
+        return "Some generic animal sound";
+    }
 }
 class Dog2 extends Animal2 {
-  bark(): string {
-    return `${this.name} says: Gâu!`;
-  }
+    bark(): string {
+        return `${this.name} says: Gâu!`;
+    }
 }
 class Cat extends Animal2 {
-  meow(): string {
-    return `${this.name} says: Meow!`;
-  }
+    meow(): string {
+        return `${this.name} says: Meow!`;
+    }
 }
 const dogg = new Dog2("Buddy");
 const cat1 = new Cat("Whiskers");
@@ -219,22 +219,22 @@ console.log(cat1.meow());
 
 // 12. Define interfaces Flyable and Swimmable. Implement them in Bird and Fish classes.
 interface Flyable {
-  fly(): string;
+    fly(): string;
 }
 interface Swimmable {
-  swim(): string;
+    swim(): string;
 }
 class Bird implements Flyable {
-  constructor(public name: string) {}
-  fly(): string {
-    return `${this.name} is flying!`;
-  }
+    constructor(public name: string) { }
+    fly(): string {
+        return `${this.name} is flying!`;
+    }
 }
 class Fish implements Swimmable {
-  constructor(public name: string) {}
-  swim(): string {      
-    return `${this.name} is swimming!`;
-  }
+    constructor(public name: string) { }
+    swim(): string {
+        return `${this.name} is swimming!`;
+    }
 }
 const bird = new Bird("Chim bồ câu");
 const fish = new Fish("Cá chép");
@@ -244,25 +244,25 @@ console.log(fish.swim());
 // 13. Create an abstract class Shape with method area(). 
 // Implement Square and Circle.
 abstract class Shape {
-  abstract area(): number;
+    abstract area(): number;
 }
 class Square extends Shape {
     constructor(private side: number) {
         super();
     }
-    
+
     area(): number {
         return this.side * this.side;
     }
-    }
+}
 class Circle extends Shape {
-  constructor(private radius: number) {
-    super();
-  }
+    constructor(private radius: number) {
+        super();
+    }
 
-  area(): number {
-    return Math.PI * this.radius * this.radius;
-  }
+    area(): number {
+        return Math.PI * this.radius * this.radius;
+    }
 }
 const square = new Square(4);
 const circle = new Circle(3);
@@ -272,39 +272,64 @@ console.log(`Circle Area: ${circle.area().toFixed(2)}`);
 // 14. Create a base class Employee. Extend Manager and Developer
 //  with specific methods.
 class Employee {
-  constructor(public name: string, public position: string) {}
+    constructor(public name: string, public position: string) { }
 
-  displayInfo(): void {
-    console.log(`Name: ${this.name}, Position: ${this.position}`);
-  }
+    displayInfo(): void {
+        console.log(`Name: ${this.name}, Position: ${this.position}`);
+    }
 }
 
 class Manager extends Employee {
-  constructor(name: string) {
-    super(name, "Manager");
-  }
+    constructor(name: string) {
+        super(name, "Manager");
+    }
 
-  manage(): void {
-    console.log(`${this.name} is managing the team.`);
-  }
+    manage(): void {
+        console.log(`${this.name} is managing the team.`);
+    }
 }
 class Developer extends Employee {
-  constructor(name: string) {
-    super(name, "Developer");
-  }
+    constructor(name: string) {
+        super(name, "Developer");
+    }
 
-  code(): void {
-    console.log(`${this.name} is writing code.`);
-  }
+    code(): void {
+        console.log(`${this.name} is writing code.`);
+    }
 }
 const manager = new Manager("Nguyen Van A");
-const developer = new Developer("Nguyen Van B");    
+const developer = new Developer("Nguyen Van B");
 console.log("==================Cau 14==================")
 manager.displayInfo();
 developer.displayInfo();
 manager.manage();
 developer.code();
-// 15. Create a Library class that can store Book and User objects. Add method to add books.
+// 15. Create a Library class that can store Book and User objects. 
+// Add method to add books.
+class Library {
+    private books: Book[] = [];
+    private users: User[] = [];
+
+    addBook(book: Book): void {
+        this.books.push(book);
+        console.log(`Added book: ${book.title}`);
+    }
+    addUser(user: User): void {
+        this.users.push(user);
+        console.log(`Added user: ${user.name}`);
+    }
+
+    displayBooks(): void {
+        console.log("Books in library:");
+        this.books.forEach(book => book.displayInfo());
+    }
+}
+const library = new Library();
+console.log("==================Cau 15==================")
+library.addBook(new Book(" Head First JavaScript Programming_ A Brain-Friendly Guide-O’Reilly Media (2014)", "F. Scott Fitzgerald", 1925));
+library.addUser(new User("John Doe"));
+library.displayBooks();
+
 // 16. Create a generic class Box that can store any type of value.
 // 17. Write a singleton Logger class that logs messages to console.
 // 18. Create a static class MathUtil with methods add(), subtract(), multiply(), divide().
