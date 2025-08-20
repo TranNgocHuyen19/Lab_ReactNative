@@ -372,6 +372,30 @@ const logger = Logger.getInstance();
 console.log("==================Cau 17==================")
 logger.log("This is a singleton logger message.");
 // 18. Create a static class MathUtil with methods add(), subtract(), multiply(), divide().
+class MathUtil {
+  private constructor() {}
+
+  static add(a: number, b: number): number {
+    return a + b;
+  }
+  static subtract(a: number, b: number): number {
+    return a - b;
+  }
+  static multiply(a: number, b: number): number {
+    return a * b;
+  }
+  static divide(a: number, b: number): number {
+    if (b === 0) {
+      throw new Error('Division by zero is not allowed.');
+    }
+    return a / b;
+  }
+}
+console.log("==================Cau 18==================")
+console.log(`Addition: ${MathUtil.add(5, 3)}`);
+console.log(`Subtraction: ${MathUtil.subtract(5, 3)}`);
+console.log(`Multiplication: ${MathUtil.multiply(5, 3)}`);
+console.log(`Division: ${MathUtil.divide(5, 3).toFixed(2)}`);
 // 19. Demonstrate method overriding using polymorphism with Animal and subclasses.
 // 20. Write a Vehicle interface and implement it in Car and Bike classes.
 // 21. Create a generic Repository class with methods add(), getAll().
