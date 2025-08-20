@@ -567,7 +567,17 @@ order.addProduct(new Product("Phone", 8000000));
 console.log(`Total Price: ${order.calculateTotalPrice()}`);
 
 // 27. Create a class Teacher that extends Person. Add subject attribute and introduce method.
-
+class Teacher extends Person {
+    constructor(name: string, age: number, public subject: string) {
+        super(name, age);
+    }
+    introduce(): void {
+        console.log(`Hello, I am ${this.name}, a ${this.age}-year-old teacher of ${this.subject}.`);
+    }
+}
+const teacher = new Teacher("Nguyễn Văn Thắng", 40, "Lập trình cho thiết bị di động");
+console.log("==================Cau 27==================")
+teacher.introduce();
 // 28. Create a class Animal with protected method makeSound(). Extend Dog and Cat to override it.
 // 29. Create an interface Movable with method move(). Implement it in Car and Robot.
 // 30. Create a class School with list of Students and Teachers. Add method to display info.
