@@ -351,6 +351,26 @@ console.log("==================Cau 16==================")
 console.log(`String Box Value: ${stringBox.getValue()}`);
 console.log(`Number Box Value: ${numberBox.getValue()}`);
 // 17. Write a singleton Logger class that logs messages to console.
+
+class Logger {
+    private static instance: Logger;
+
+    private constructor() { }
+
+    static getInstance(): Logger {
+        if (!Logger.instance) {
+            Logger.instance = new Logger();
+        }
+        return Logger.instance;
+    }
+
+    log(message: string): void {
+        console.log(`Log: ${message}`);
+    }
+}
+const logger = Logger.getInstance();
+console.log("==================Cau 17==================")
+logger.log("This is a singleton logger message.");
 // 18. Create a static class MathUtil with methods add(), subtract(), multiply(), divide().
 // 19. Demonstrate method overriding using polymorphism with Animal and subclasses.
 // 20. Write a Vehicle interface and implement it in Car and Bike classes.
