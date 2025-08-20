@@ -110,6 +110,26 @@ console.log("==================Cau 6==================")
 book.displayInfo();
 
 // 7. Write a class User with private property name and getter/setter.
+class User {
+  private _name: string;
+
+  constructor(name: string) {
+    this._name = name;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  set name(newName: string) {
+    this._name = newName;
+  }
+}
+const user = new User("Trần Ngọc Huyền IUH");
+console.log("==================Cau 7==================")
+console.log(`User Name: ${user.name}`);
+user.name = "Trần Ngọc Huyền";
+console.log(`Updated User Name: ${user.name}`);
 // 8. Create a Product class with name, price. Create an array of products and filter products with
 // price > 100.
 // 9. Define an interface Animal with name and method sound().
