@@ -521,6 +521,24 @@ cashPayment.pay(100);
 cardPayment.pay(200);
 
 // 24. Create an abstract class Appliance with method turnOn(). Implement Fan and AirConditioner.
+abstract class Appliance {
+    abstract turnOn(): void;
+}
+class Fan extends Appliance {
+    turnOn(): void {
+        console.log("Fan is now ON.");
+    }
+}
+class AirConditioner extends Appliance {
+    turnOn(): void {
+        console.log("Air Conditioner is now ON.");
+    }
+}
+const fan = new Fan();
+const airConditioner = new AirConditioner();
+console.log("==================Cau 24==================")
+fan.turnOn();
+airConditioner.turnOn();
 // 25. Create a class Shape with a static method describe().
 // 26. Create a class Order with list of products. Add method to calculate total price.
 // 27. Create a class Teacher that extends Person. Add subject attribute and introduce method.
