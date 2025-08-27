@@ -57,7 +57,7 @@ randomNumber()
 const simulateTask = (time: number): Promise<string> => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            console.log("==================Cau 5==================")
+            // console.log("==================Cau 5==================")
             resolve("Task done")
         }, time)
     })
@@ -66,6 +66,14 @@ simulateTask(1000)
     .then(console.log)
 // 6. Use Promise.all() to run 3 simulated Promises in 
 // parallel and print the result.
+Promise.all([
+    simulateTask(2000),
+    simulateTask(1500),
+    simulateTask(2500),
+]).then(results => {
+    console.log("==================Cau 6==================")
+    console.log(results)
+})
 // 7. Use Promise.race() to return whichever 
 // Promise resolves first.
 // 8. Create a Promise chain: square the number 2, 
