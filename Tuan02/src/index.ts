@@ -163,13 +163,22 @@ asyncWithErrorHandling();
 const multiplyByThree = async (num: number): Promise<number> => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            console.log("==================Cau 14==================")
+            // console.log("==================Cau 14==================")
             resolve(num * 3);
         }, 1000);
     });
 };
 multiplyByThree(5).then(console.log);
 // 15. Call multiple async functions sequentially using await.
+const sequentialCalls = async (): Promise<void> => {
+    const first = await multiplyByThree(2);
+    console.log("Cau 15: First call result:", first);
+    const second = await multiplyByThree(first);
+    console.log("Cau 15: Second call result:", second);
+    const third = await multiplyByThree(second);
+    console.log("Cau 15: Third call result:", third);
+};
+sequentialCalls();
 // 16. Call multiple async functions in parallel using Promise.all().
 // 17. Use for await...of to iterate over an array of Promises.
 // 18. Write an async function fetchUser(id) that simulates an API call (resolves a user
