@@ -123,3 +123,28 @@ taskWithFinally
     .then(console.log)
     .catch(console.error)
     .finally(() => console.log("Done"));
+
+//  B. Async/Await
+// 11. Convert Exercise 1 into async/await.
+const asyncHelloAsync = async (): Promise<void> => {
+    const result = await new Promise<string>((resolve) => {
+        setTimeout(() => {
+            console.log("==================Cau 11==================")
+            resolve("Hello Async");
+        }, 2000);
+    });
+    console.log(result);
+};
+asyncHelloAsync();
+
+// 12. Write an async function that calls simulateTask(2000) and logs the result.
+// 13. Handle errors using try/catch with async/await.
+// 14. Write an async function that takes a number, waits 1 second, and returns the number × 3.
+// 15. Call multiple async functions sequentially using await.
+// 16. Call multiple async functions in parallel using Promise.all().
+// 17. Use for await...of to iterate over an array of Promises.
+// 18. Write an async function fetchUser(id) that simulates an API call (resolves a user
+// object after 1 second).
+// 19. Create an async function fetchUsers(ids: number[]) that calls fetchUser for each
+// ID.
+// 20. Add a timeout: if the API call takes more than 2 seconds, throw an error.
