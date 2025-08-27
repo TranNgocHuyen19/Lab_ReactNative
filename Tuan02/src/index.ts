@@ -191,6 +191,13 @@ const parallelCalls = async (): Promise<void> => {
 };
 parallelCalls();
 // 17. Use for await...of to iterate over an array of Promises.
+const forAwaitOfExample = async (): Promise<void> => {
+    const promises = [multiplyByThree(1), multiplyByThree(2), multiplyByThree(3)];
+    for await (const result of promises) {
+        console.log("Cau 17: Result:", result);
+    }
+};
+forAwaitOfExample();
 // 18. Write an async function fetchUser(id) that simulates an API call (resolves a user
 // object after 1 second).
 // 19. Create an async function fetchUsers(ids: number[]) that calls fetchUser for each
