@@ -86,6 +86,15 @@ Promise.race([
 });
 // 8. Create a Promise chain: square the number 2, 
 // then double it, then add 5.
+Promise.resolve(2)
+    .then(num => {
+        console.log("==================Cau 8==================")
+        return num * num
+    })
+    .then(square => square * 2)
+    .then(doubled => doubled + 5)
+    .then(result => console.log("Final result:", result));
+
 // 9. Write a Promise that reads an array after 1 second 
 // and filters even numbers.
 // 10. Use .finally() to log "Done" when a Promise 
