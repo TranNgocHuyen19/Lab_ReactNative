@@ -180,6 +180,16 @@ const sequentialCalls = async (): Promise<void> => {
 };
 sequentialCalls();
 // 16. Call multiple async functions in parallel using Promise.all().
+const parallelCalls = async (): Promise<void> => {
+    const results = await Promise.all([
+        multiplyByThree(2),
+        multiplyByThree(3),
+        multiplyByThree(4),
+    ]);
+    console.log("==================Cau 16==================")
+    console.log("Parallel results:", results);
+};
+parallelCalls();
 // 17. Use for await...of to iterate over an array of Promises.
 // 18. Write an async function fetchUser(id) that simulates an API call (resolves a user
 // object after 1 second).
