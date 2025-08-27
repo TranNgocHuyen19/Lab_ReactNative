@@ -1,23 +1,30 @@
 // A. Basics with Promise
 // 1. Create a Promise that returns the string 
 // "Hello Async" after 2 seconds.
-function helloAsync(): Promise<string> {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Hello Async");
-        }, 2000);
-    }
-    );
-}
-console.log("==================Cau 1==================")
-helloAsync().then(console.log);
+const helloAsync = new Promise<string>((resolve) => {
+    setTimeout(() => {
+        console.log("==================Cau 1==================")
+        resolve("Hello Async");
+    }, 2000);
+});
+helloAsync.then(console.log);
 
 // 2. Write a function that returns a Promise resolving with 
 // the number 10 after 1 second.
+const returnTen = (): Promise<number> => {
+    return new Promise<number>((resolve) => {
+        console.log("==================Cau 2==================")
+        setTimeout(() => {
+            resolve(10);
+        }, 1000);
+    });
+};
+returnTen().then(console.log);
+
 // 3. Write a function that rejects a Promise with the error 
-// "Something went wrong" after 1
-// second.
-// 4. Use .then() and .catch() to handle a Promise that 
+// "Something went wrong" after 1 second.
+
+// 4. Use .then() and .catch() to handle a Promi se that 
 // returns a random number.
 // 5. Create a function simulateTask(time) that 
 // returns a Promise resolving with "Task
