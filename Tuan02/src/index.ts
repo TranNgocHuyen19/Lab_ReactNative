@@ -54,6 +54,16 @@ randomNumber()
 // 5. Create a function simulateTask(time) that 
 // returns a Promise resolving with "Task
 // done" after time ms.
+const simulateTask = (time: number): Promise<string> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("==================Cau 5==================")
+            resolve("Task done")
+        }, time)
+    })
+}
+simulateTask(1000)
+    .then(console.log)
 // 6. Use Promise.all() to run 3 simulated Promises in 
 // parallel and print the result.
 // 7. Use Promise.race() to return whichever 
