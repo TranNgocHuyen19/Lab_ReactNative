@@ -200,6 +200,24 @@ const forAwaitOfExample = async (): Promise<void> => {
 forAwaitOfExample();
 // 18. Write an async function fetchUser(id) that simulates an API call (resolves a user
 // object after 1 second).
-// 19. Create an async function fetchUsers(ids: number[]) that calls fetchUser for each
+
+type User = {
+    id: number;
+    name: string;
+}
+const fetchUser = async (id: number): Promise<User> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ id, name: `User${id}` });
+        }, 1000);
+    });
+};  
+fetchUser(1).then(user => {
+    console.log("==================Cau 18==================")
+    console.log(user);
+});
+
+// 19. Create an async function fetchUsers(ids: number[]) 
+// that calls fetchUser for each
 // ID.
 // 20. Add a timeout: if the API call takes more than 2 seconds, throw an error.
