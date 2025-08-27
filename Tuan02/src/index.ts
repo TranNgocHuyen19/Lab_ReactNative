@@ -35,6 +35,22 @@ rejectWithError()
     .catch((err) => console.error(err.message));
 // 4. Use .then() and .catch() to handle a Promi se that 
 // returns a random number.
+const randomNumber = (): Promise<number> => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("==================Cau 4==================")
+            const num = Math.random();
+            if(num < 5)
+                resolve(num)
+            else {
+                reject(new Error("Something went wrong"))
+            }
+        }, 1000)
+    })
+}
+randomNumber()
+    .then(console.log)
+    .catch((err) => console.error(err.message));
 // 5. Create a function simulateTask(time) that 
 // returns a Promise resolving with "Task
 // done" after time ms.
