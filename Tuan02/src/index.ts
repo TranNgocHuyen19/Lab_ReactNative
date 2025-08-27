@@ -137,7 +137,14 @@ const asyncHelloAsync = async (): Promise<void> => {
 };
 asyncHelloAsync();
 
-// 12. Write an async function that calls simulateTask(2000) and logs the result.
+// 12. Write an async function that calls simulateTask(2000) and 
+// logs the result.
+const asyncSimulateTask = async (): Promise<void> => {
+    const result = await simulateTask(2000);
+    console.log("==================Cau 12==================")
+    console.log(result);
+};
+asyncSimulateTask();
 // 13. Handle errors using try/catch with async/await.
 // 14. Write an async function that takes a number, waits 1 second, and returns the number × 3.
 // 15. Call multiple async functions sequentially using await.
