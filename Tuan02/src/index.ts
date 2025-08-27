@@ -111,3 +111,15 @@ filterEvenNumbers()
     .then(console.log)
 // 10. Use .finally() to log "Done" when a Promise 
 // finishes (success or failure).
+const taskWithFinally = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("==================Cau 10==================")
+        const success = Math.random() > 0.3;
+        if (success) resolve("Completed successfully");
+        else reject("Failed");
+    }, 1000);
+});
+taskWithFinally
+    .then(console.log)
+    .catch(console.error)
+    .finally(() => console.log("Done"));
