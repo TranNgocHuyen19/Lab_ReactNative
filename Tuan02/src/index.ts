@@ -229,3 +229,32 @@ fetchUsers([1, 2, 3]).then(users => {
     console.log(users);
 });
 // 20. Add a timeout: if the API call takes more than 2 seconds, throw an error.
+const fetchUserWithTimeout = async (id: number, timeout: number = 2000): Promise<User> => {
+    return new Promise((resolve, reject) => {
+        const timer = setTimeout(() => {
+            reject(new Error("Request timed out"));
+        }, timeout);
+
+        fetchUser(id)
+            .then(user => {
+                clearTimeout(timer);
+                resolve(user);
+            })
+            .catch(err => {
+                clearTimeout(timer);
+                reject(err);
+            });
+    });
+};
+fetchUserWithTimeout(1, 1500)
+    .then(user => {
+        console.log("==================Cau 20==================")
+        console.log(user);
+    })
+    .catch(err => console.error(err.message));
+fetchUserWithTimeout(2, 500) 
+    .then(user => console.log(user))
+    .catch(err => { 
+        console.log("==================Cau 20==================")
+        console.error(err.message) 
+    });
