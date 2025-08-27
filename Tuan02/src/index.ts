@@ -97,5 +97,17 @@ Promise.resolve(2)
 
 // 9. Write a Promise that reads an array after 1 second 
 // and filters even numbers.
+const filterEvenNumbers = (): Promise<number[]> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("==================Cau 9==================")
+            const arr = [1, 2, 3, 4, 5, 6, 7]
+            const evens = arr.filter(num => num % 2 == 0)
+            resolve(evens)
+        }, 1000)
+    })
+}
+filterEvenNumbers()
+    .then(console.log)
 // 10. Use .finally() to log "Done" when a Promise 
 // finishes (success or failure).
