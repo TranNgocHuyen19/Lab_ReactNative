@@ -146,6 +146,18 @@ const asyncSimulateTask = async (): Promise<void> => {
 };
 asyncSimulateTask();
 // 13. Handle errors using try/catch with async/await.
+const asyncWithErrorHandling = async (): Promise<void> => {
+    try {
+        const result = await rejectWithError();
+        console.log(result);
+    } catch (err) {
+        console.log("==================Cau 13==================")
+        if (err instanceof Error) {
+            console.error(err.message);
+        }
+    }
+};
+asyncWithErrorHandling();
 // 14. Write an async function that takes a number, waits 1 second, and returns the number × 3.
 // 15. Call multiple async functions sequentially using await.
 // 16. Call multiple async functions in parallel using Promise.all().
