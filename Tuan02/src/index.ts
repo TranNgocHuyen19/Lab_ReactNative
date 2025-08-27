@@ -76,6 +76,14 @@ Promise.all([
 })
 // 7. Use Promise.race() to return whichever 
 // Promise resolves first.
+Promise.race([
+    simulateTask(1000),
+    simulateTask(1500),
+    simulateTask(2000)
+]).then(result => {
+    console.log("==================Cau 7==================")
+    console.log("First to finish:", result);
+});
 // 8. Create a Promise chain: square the number 2, 
 // then double it, then add 5.
 // 9. Write a Promise that reads an array after 1 second 
