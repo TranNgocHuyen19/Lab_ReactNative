@@ -220,4 +220,12 @@ fetchUser(1).then(user => {
 // 19. Create an async function fetchUsers(ids: number[]) 
 // that calls fetchUser for each
 // ID.
+const fetchUsers = async (ids: number[]): Promise<User[]> => {
+    const userPromises = ids.map(id => fetchUser(id));
+    return Promise.all(userPromises);
+};
+fetchUsers([1, 2, 3]).then(users => {
+    console.log("==================Cau 19==================")
+    console.log(users);
+});
 // 20. Add a timeout: if the API call takes more than 2 seconds, throw an error.
