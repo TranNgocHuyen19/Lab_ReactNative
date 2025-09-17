@@ -1,7 +1,13 @@
-import { StyleSheet, ActivityIndicator, View, Text, FlatList } from 'react-native';
+import {
+  StyleSheet,
+  ActivityIndicator,
+  View,
+  Text,
+  FlatList,
+} from 'react-native';
 
-import ProductBox from './ProductBox';
-import NavigatorBar from './NavigatorBar';
+import ProductCard from './ProductCard';
+import InputBar from './InputBar';
 import BottomTab from './BottomTab';
 import { useState, useEffect } from 'react';
 
@@ -38,28 +44,29 @@ export default function Screen4b() {
     loadProduct();
   }, []);
 
-  if(loading) return (
-    <ActivityIndicator size="large" color="#00ff00" />
-  )
+  if (loading) return <ActivityIndicator size="large" color="#00ff00" />;
 
-  if(error) return (
-    <Text style={{color: 'red', fontWeight: '700'}}>{error}</Text>
-  )
+  if (error)
+    return <Text style={{ color: 'red', fontWeight: '700' }}>{error}</Text>;
 
   return (
-     <View style={styles.container}>
-     <NavigatorBar />
-     <Text style={{textAlign: 'center', paddingVertical: 10, fontWeight: 500}}>Bạn có thắc mắc với sản phẩm vừa xem đừng ngại chát với shop!</Text>
-      {data ? (
+    <View style={styles.container}>
+      <InputBar />
+        {data ? (
         <FlatList
           data={data}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <ProductBox item={item} />}
+          renderItem={({ item }) => <ProductCard item={item} />}
+          scrollEnabled={false}
+          numColumns={2}
+          columnWrapperStyle={{
+            justifyContent: 'space-between',
+          }}
         />
       ) : (
         <Text>No products</Text>
       )}
-      <BottomTab/>
+      <BottomTab />
     </View>
   );
 }
